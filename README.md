@@ -1,4 +1,4 @@
-# Today I Learned 
+# Today I Learn
 시작한날 : ```10/21```  
 <hr/>
 먼저 TIL에 대해 알아보기로해요 :-)  
