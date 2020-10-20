@@ -1,5 +1,6 @@
 # Today I Learned 
 시작한날 : ```10/21```  
+<hr/>
 먼저 TIL에 대해 알아보기로해요 :-)  
 TIL은 Today I Learn 의 약어입니다! 한국말로 직역하면 오늘 내가 배운 것! 이라는 뜻이죠 😊  
 일일커밋 이라고 부르기도 해요. 오늘 공부 한 내용을 매일매일 기록하는 방법이라고 쉽게 이해하면 될 것 같아요!  
@@ -8,6 +9,6 @@ TIL은 Today I Learn 의 약어입니다! 한국말로 직역하면 오늘 내�
 
 ### 작성법
 - 폴더와 파일명은 될 수 있으면 영문으로 작성한다.
-- [Markdown](https://gist.github.com/ihoneymon/652be052a0727ad59601, "Markdown link")으로 작성하고 파일 확장자는 md.
+- [Markdown](https://hr/>gist.github.com/ihoneymon/652be052a0727ad59601, "Markdown link")으로 작성하고 파일 확장자는 md.
 - 짧고 간결하며 핵심적인 문장을 사용한다. 필요한 설명이 있으면 관련된 정보가 포함된 외부 링크를 사용 하자.
 
