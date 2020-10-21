@@ -2,17 +2,17 @@
 
 ### 코드 Edit
 
-- **디렉토리, 패키지 클래스등 생성 목록 보기**
+- **디렉토리, 패키지 클래스등 생성 목록 보기** ```실용도 : 👍 👍 👍```
   - Mac : ```Commnad + N```
   - Window, Linux : ```Alt + Insert```
 
 
-- **코드 템플릿 😄**
+- **코드 템플릿** 👍 👍 
   - 메인 메소드 : ```psvm```
   - System.out.println() : ```sout```
 
 
-- **실행환경 실행**
+- **실행환경 실행** 👍 👍 👍 
   - 현재 포커스 실행
     - Mac : ```Ctrl + shift + R```
     - Window, Linux : ```Ctrl + Shift + F10```
@@ -36,7 +36,7 @@
   - Window, Linux : ```Ctrl + Shift + J```
 
 
-- **라인 단위로 옮기기**
+- **라인 단위로 옮기기** 👍 👍 👍 👍 👍 
   - 라인 이동 (오류가 있던 없던 신경쓰지 않음)
     - Mac : ```Command + Shift + Up&Down```
     - Window, Linux : ```Ctrl + Shift + Up&Down```
@@ -51,3 +51,15 @@
 
 
 - **인자 값 즉시 보기**
+  - Mac : ```Command + P```
+  - Window, Linux : ```Ctrl + P```
+
+
+- **코드 구현 부분 즉시 보기**
+  - Mac : ```Option + Space```
+  - Window, Linux : ```Ctrl + Shift + I```
+
+
+- **Doc 즉시 보기**
+  - Mac : ```fn + F1```
+  - Window, Linux : ```Ctrl + Q```
