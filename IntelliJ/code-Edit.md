@@ -55,11 +55,11 @@
   - Window, Linux : ```Ctrl + P```
 
 
-- **코드 구현 부분 즉시 보기** ```실용도 : ❤️ ❤️ ❤️```
+- **코드 구현 부분 즉시 보기** 
   - Mac : ```Option + Space```
   - Window, Linux : ```Ctrl + Shift + I```
 
 
-- **Doc 즉시 보기** ```실용도 : ❤️ ❤️ ❤️```
+- **Doc 즉시 보기**
   - Mac : ```fn + F1```
   - Window, Linux : ```Ctrl + Q```
