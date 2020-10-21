@@ -2,12 +2,12 @@
 
 ### 코드 Edit
 
-- <span class="evidence">**디렉토리, 패키지 클래스<span/>등 생성 목록 보기**
-- - Mac : ```Commnad``` + ```N```
-  - Window, Linux : ```Alt``` + ```Insert```
+- **디렉토리, 패키지 클래스등 생성 목록 보기**
+  - Mac : ```Commnad + N```
+  - Window, Linux : ```Alt + Insert```
 
 
-- **코드 템플릿**
+- **코드 템플릿 😄**
   - 메인 메소드 : ```psvm```
   - System.out.println() : ```sout```
 
@@ -26,17 +26,17 @@
   - Window, Linux : ```Ctrl + D```
 
 
-- **라인 삭제하기** 
+- **라인 삭제하기**
   - Mac : ```Command + Back Space```
   - Window, Linux : ```Ctrl + Y```
 
 
-- **라인 합치기** 
+- **라인 합치기**
   - Mac : ```Ctrl + Shift + J```
   - Window, Linux : ```Ctrl + Shift + J```
 
 
-- **라인 단위로 옮기기** 
+- **라인 단위로 옮기기**
   - 라인 이동 (오류가 있던 없던 신경쓰지 않음)
     - Mac : ```Command + Shift + Up&Down```
     - Window, Linux : ```Ctrl + Shift + Up&Down```
@@ -45,21 +45,9 @@
     - Window, Linux : ```Shift + Alt + Up&Down```
 
 
-- **Element 단위로 옮기기** 
+- **Element 단위로 옮기기**
   - Mac : ```Command + Shift + Option + Right&Left```
   - Window, Linux : ```Ctrl + Shift + Alt + Right&Left```
 
 
-- **인자 값 즉시 보기**  
-  - Mac : ```Command + P```
-  - Window, Linux : ```Ctrl + P```
-
-
-- **코드 구현 부분 즉시 보기** 
-  - Mac : ```Option + Space```
-  - Window, Linux : ```Ctrl + Shift + I```
-
-
-- **Doc 즉시 보기**
-  - Mac : ```fn + F1```
-  - Window, Linux : ```Ctrl + Q```
+- **인자 값 즉시 보기**
