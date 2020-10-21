@@ -2,17 +2,17 @@
 
 ### 코드 Edit
 
-- **디렉토리, 패키지 클래스등 생성 목록 보기** ```실용도 : ❤️  ❤️  ❤️ ```
-- - Mac : ```Commnad + N```
-  - Window, Linux : ```Alt + Insert```
+- <span class="evidence">**디렉토리, 패키지 클래스<span/>등 생성 목록 보기**
+- - Mac : ```Commnad``` + ```N```
+  - Window, Linux : ```Alt``` + ```Insert```
 
 
-- **코드 템플릿** ```실용도 : ❤️  ❤️ ```
+- **코드 템플릿**
   - 메인 메소드 : ```psvm```
   - System.out.println() : ```sout```
 
 
-- **실행환경 실행** ```실용도 : ❤️ ❤️ ❤️ ❤️ ❤️```
+- **실행환경 실행**
   - 현재 포커스 실행
     - Mac : ```Ctrl + shift + R```
     - Window, Linux : ```Ctrl + Shift + F10```
@@ -21,22 +21,22 @@
     - Window, Linux : ```Shift + F10```
 
 
-- **라인 복사하기** ```실용도 : ❤️ ❤️```
+- **라인 복사하기**
   - Mac : ```Command + D```
   - Window, Linux : ```Ctrl + D```
 
 
-- **라인 삭제하기** ```실용도 : ❤️ ❤️```
+- **라인 삭제하기** 
   - Mac : ```Command + Back Space```
   - Window, Linux : ```Ctrl + Y```
 
 
-- **라인 합치기** ```실용도 : ❤️ ❤️ ❤️```
+- **라인 합치기** 
   - Mac : ```Ctrl + Shift + J```
   - Window, Linux : ```Ctrl + Shift + J```
 
 
-- **라인 단위로 옮기기** ```실용도 : ❤️ ❤️ ❤️```
+- **라인 단위로 옮기기** 
   - 라인 이동 (오류가 있던 없던 신경쓰지 않음)
     - Mac : ```Command + Shift + Up&Down```
     - Window, Linux : ```Ctrl + Shift + Up&Down```
@@ -45,12 +45,12 @@
     - Window, Linux : ```Shift + Alt + Up&Down```
 
 
-- **Element 단위로 옮기기** ```실용도 : ❤️ ❤️ ❤️ ❤️ ❤️```
+- **Element 단위로 옮기기** 
   - Mac : ```Command + Shift + Option + Right&Left```
   - Window, Linux : ```Ctrl + Shift + Alt + Right&Left```
 
 
-- **인자 값 즉시 보기**  ```실용도 : ❤️ ❤️ ❤️ ❤️```
+- **인자 값 즉시 보기**  
   - Mac : ```Command + P```
   - Window, Linux : ```Ctrl + P```
 
