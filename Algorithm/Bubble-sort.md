@@ -36,6 +36,7 @@
 
 ## **알고리즘 구현 with ```Python```**
 
+
 * 특이점 찾아보기
   * n개의 리스트가 있는 경우 최대 n-1번의 로직을 적용한다.
   * 로직을 1번 적용할 때마다 가장 큰 숫자가 뒤에서부터 1개씩 결정된다.
@@ -50,25 +51,35 @@
   6. swap += 1
   7. 반복문 안에서, if swap == 0 이면, break 끝
 
-  ## 5. 코드
+## **코드**
 
-  ```python
-  def bubblesort(data):
-      for index in range(len(data) - 1):
-          swap = False
-          for index2 in range(len(data) - index - 1):
-              if data[index2] > data[index2 + 1]:
-                  data[index2], data[index2 + 1] = data[index2 + 1], data[index2]
-                  swap = True
+```python
+def bubblesort(data):
+    for index in range(len(data) - 1):
+        swap = False
+        for index2 in range(len(data) - index - 1):
+            if data[index2] > data[index2 + 1]:
+                data[index2], data[index2 + 1] = data[index2 + 1], data[index2]
+                swap = True
+  
+        if swap == False:
+            break
+    return data
+```
 
-          if swap == False:
-              break
-      return data
-  ```
 
-  ```python
-  import random
 
-  data_list = random.sample(range(100), 50)
-  print (bubblesort(data_list))
-  ```
+
+
+python
+def bubblesort(data):
+for index in range(len(data) - 1):
+swap = False
+for index2 in range(len(data) - index - 1):
+if data[index2] > data[index2 + 1]:
+data[index2], data[index2 + 1] = data[index2 + 1], data[index2]
+swap = True
+
+if swap == False:
+break
+return data
