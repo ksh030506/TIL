@@ -49,3 +49,9 @@
 
   - Mac : ```option * 2``` + ```Down```
   - Window, Linux : ```Ctrl``` + ```Q```
+
+
+- ## **오류 라인 자동 포커스**
+
+  - Mac : ```F2```
+  - Window, Linux : ```F2```
