@@ -1,6 +1,6 @@
 # IntelliJ 단축키 모음집_2
 
-## 코드 Edit
+## Focus Move
 
 - ## **단어별 이동**
 
