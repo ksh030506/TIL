@@ -2,38 +2,28 @@
 
 ## 코드 Edit
 
-- ## **코드 템플릿**
+- ## **단어별 이동**
 
-  - 메인 메소드 : ```psvm```
-  - System.out.println() : ```sout```
-
-
-- ## **실행환경 실행**
-
-  - 현재 포커스 실행
-    - Mac : ```Ctrl``` + ```shift``` + ```R```
-    - Window, Linux : ```Ctrl``` + ```Shift``` + ```F10```
-  - 이전 포커스 실행
-    - Mac : ```Ctrl``` + ```R```
-    - Window, Linux : ```Shift``` + ```F10```
+  - Mac : ```Alt``` + ```Right&Left```
+  - Window, Linux : ```Ctrl``` + ```Right&Left```
 
 
-- ## **라인 복사하기**
+- ## **단어별 선택**
 
-  - Mac : ```Command``` + ```D```
-  - Window, Linux : ```Ctrl``` + ```D```
-
-
-- ## **라인 삭제하기**
-
-  - Mac : ```Command``` + ```Back Space```
-  - Window, Linux : ```Ctrl``` + ```Y```
+  - Mac : ```Shift``` + ```Alt``` + ```Right&Left```
+  - Window, Linux : ```Shift``` + ```Ctrl``` + ```Right&Left```
 
 
-- ## **라인 합치기**
+- ## **라인 첫/끝 이동**
 
-  - Mac : ```Ctrl``` + ```Shift``` + ```J```
-  - Window, Linux : ```Ctrl``` + ```Shift``` + ```J```
+  - Mac : ```fn``` + ```Right&Left```
+  - Window, Linux : ```Home```, ```End```
+
+
+- ## **라인 전체 선택**
+
+  - Mac : ```Command``` + ```Shift``` + ```Right&Left```
+  - Window, Linux : ```Shift``` + ```Home```, ```End```
 
 
 - ## **라인 단위로 옮기기**
