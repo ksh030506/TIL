@@ -35,7 +35,7 @@
 - ## **포커스 범위 한 단계씩 늘리기**
 
   - Mac : ```option``` + ```Up&Down```
-  - Window, Linux : ```Ctrl``` + ```W``` => 위
+  - Window, Linux : ```Ctrl``` + ```W``` => 위 <br/>
                     ```Ctrl``` + ```Shift``` + ```W``` => 아래
 
 
