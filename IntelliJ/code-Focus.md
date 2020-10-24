@@ -26,35 +26,26 @@
   - Window, Linux : ```Shift``` + ```Home```, ```End```
 
 
-- ## **라인 단위로 옮기기**
+- ## **Page Up/Down**
 
-  - 라인 이동 (오류가 있던 없던 신경쓰지 않음)
-    - Mac : ```Command``` + ```Shift``` + ```Up&Down```
-    - Window, Linux : ```Ctrl``` + ```Shift``` + ```Up&Down```
-  - 구문 이동(오류가 없는 한에서 이동
-    - Mac : Option + ```Shift``` + ```Up&Down```
-    - Window, Linux : ```Shift``` + ```Alt``` + ```Up&Down```
+  - Mac : ```fn``` + ```Up```, ```Down```
+  - Window, Linux : ```Page Up```, ```Down```
 
 
-- ## **Element 단위로 옮기기**
+- ## **포커스 범위 한 단계씩 늘리기**
 
-  - Mac : ```Command``` + ```Shift``` + ```Option``` + ```Right&Left```
-  - Window, Linux : ```Ctrl``` + ```Shift``` + ```Alt``` + ```Right&Left```
-
-
-- ## **인자 값 즉시 보기**
-
-  - Mac : ```Command``` + ```P```
-  - Window, Linux : ```Ctrl``` + ```P```
+  - Mac : ```option``` + ```Up&Down```
+  - Window, Linux : ```Ctrl``` + ```W``` => 위
+                    ```Ctrl``` + ```Shift``` + ```W``` => 아래
 
 
-- ## **코드 구현 부분 즉시 보기**
+- ## **포커스 뒤로/앞으로 가기**
 
-  - Mac : ```Option``` + ```Space```
-  - Window, Linux : ```Ctrl``` + ```Shift``` + ```I```
+  - Mac : ```Command``` + ```,```
+  - Window, Linux : ```Ctrl``` + ```Alt``` + ```Right&Left```
 
 
-- ## **Doc 즉시 보기**
+- ## **멀티 포커스**
 
-  - Mac : ```fn``` + ```F1```
+  - Mac : ```option * 2``` + ```Down```
   - Window, Linux : ```Ctrl``` + ```Q```
