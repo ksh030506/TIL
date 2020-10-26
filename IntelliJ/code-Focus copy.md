@@ -1,23 +1,23 @@
-# IntelliJ 단축키 모음집_3
+# IntelliJ 단축키 모음집_2
 
-## Focus Serch
+## Focus Move
 
-- ## **현재 파일에서 검색**
+- ## **단어별 이동**
 
-  - Mac : ```Command``` + ```F```
-  - Window, Linux : ```Ctrl``` + ```F```
-
-
-- ## **현재 파일에서 교체**
-
-  - Mac : ```Command``` + ```R```
-  - Window, Linux : ```Ctrl``` + ```R```
+  - Mac : ```Alt``` + ```Right&Left```
+  - Window, Linux : ```Ctrl``` + ```Right&Left```
 
 
-- ## **전체에서 검색**
+- ## **단어별 선택**
 
-  - Mac : ```Command``` + ```Shift``` + ```F```
-  - Window, Linux : ```Ctrl``` + ```Shift``` + ```F```
+  - Mac : ```Shift``` + ```Alt``` + ```Right&Left```
+  - Window, Linux : ```Shift``` + ```Ctrl``` + ```Right&Left```
+
+
+- ## **라인 첫/끝 이동**
+
+  - Mac : ```fn``` + ```Right&Left```
+  - Window, Linux : ```Home```, ```End```
 
 
 - ## **라인 전체 선택**
