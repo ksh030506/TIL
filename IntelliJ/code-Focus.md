@@ -34,23 +34,28 @@
 
 - ## **파일 검색**
 
-  - Mac : ```option``` + ```Up&Down```
-  - Window, Linux : ```Ctrl``` + ```W``` => 위
-
-
-- ## **포커스 뒤로/앞으로 가기**
-
   - Mac : ```Command``` + ```Shift``` + ```O```
   - Window, Linux : ```Ctrl``` + ```Shift``` + ```N```
 
 
-- ## **멀티 포커스**
+- ## **메소드 검색**
 
-  - Mac : ```option * 2``` + ```Down```
-  - Window, Linux : ```Ctrl``` + ```Q```
+  - Mac : ```Command``` + ```Alt``` + ```O```
+  - Window, Linux : ```Ctrl``` + ```Shift``` + ```Alt``` + ```N```
 
 
-- ## **오류 라인 자동 포커스**
+- ## **Action 검색**
 
-  - Mac : ```F2```
-  - Window, Linux : ```F2```
+  - Mac : ```Command``` + ```Shift``` + ```A```
+  - Window, Linux : ```Ctrl``` + ```Shift``` + ```A```
+
+
+- ## **최근 열었던 파일 목록 보기**
+
+  - Mac : ```Command``` + ```E```
+  - Window, Linux : ```Ctrl``` + ```E```
+
+- ## **최근 수정한 파일 목록 보기**
+
+  - Mac : ```Command``` + ```Shift``` + ```E```
+  - Window, Linux : ```Ctrl``` + ```Shift``` + ```E```
