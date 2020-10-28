@@ -30,3 +30,25 @@
     - 내부 반복문 안에서 data_list[lowest] > data_list[num] 이면,
         - lowest = num
 4. data_list[num], data_list[lowest] = data_list[lowest], data_list[num]
+
+## **4. Code 구현**
+
+- selection_sort함수 : 선택정렬 하는 함수
+```python
+def selection_sort(data):
+    for stand in range(len(data) - 1):
+        lowest = stand
+        for index in range(stand + 1, len(data)):
+            if data[lowest] > data[index]:
+                lowest = index
+        data[lowest], data[stand] = data[stand], data[lowest]
+    return data
+```
+
+- selection_sort를 사용하는 코드
+```python
+import random
+
+data_list = random.sample(range(100), 10)
+selection_sort(data_list)
+```
