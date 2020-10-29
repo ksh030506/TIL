@@ -9,17 +9,20 @@
     ex) web server의 cpu load가 50%가 넘어가면 새로운 web server를 추가하도록 세팅가능
 
 ## Networking
-  - **DirectConnect**
-    - AWS와 직접 연결된 전용 네트워크 서비스
+- **DirectConnect**
+  - AWS와 직접 연결된 전용 네트워크 서비스
 
-  - **Route 53**
-    - DNS 서비스
-
-
-  - **VPC (Virtual Private Cloud**
-    - 사설 네트워크 서비스
-
-  - **Elastic Load Balancing**
-    - Load Balancing 서비스
+- **Route 53**
+  - DNS 서비스
 
 
+- **VPC (Virtual Private Cloud**
+  - 사설 네트워크 서비스
+
+- **Elastic Load Balancing**
+  - Load Balancing 서비스
+
+
+## Storage & Content Delivery
+- **Glacier**
+  - 
