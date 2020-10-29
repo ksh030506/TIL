@@ -8,3 +8,18 @@
   - 수요에 따라 EC2의 규모를 자동으로 조절 할 수 있는 서비스입니다
     ex) web server의 cpu load가 50%가 넘어가면 새로운 web server를 추가하도록 세팅가능
 
+## Networking
+  - **DirectConnect**
+    - AWS와 직접 연결된 전용 네트워크 서비스
+
+  - **Route 53**
+    - DNS 서비스
+
+
+  - **VPC (Virtual Private Cloud**
+    - 사설 네트워크 서비스
+
+  - **Elastic Load Balancing**
+    - Load Balancing 서비스
+
+
