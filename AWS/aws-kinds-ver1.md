@@ -33,6 +33,7 @@
   - 웹에서 바로 접근 가능
   - EC2에서도 mount해서 사용 가능
 
+- **EBS (Elastic Block Storage)**
   - EC2 인스턴스에서 사용할 수 있는 블럭 레벨 스토리지
   - S3는 네트워크 스토리지
   - EBS는 서버에 추가할 수 있는 하드웨어 스토리지 (SATA)
@@ -54,3 +55,14 @@
   - 외장 하드같은 디바이스를 Amazon에 우편으로 보낸 다음, 데이터를 Import 또는 Exprot 후 다시 돌려받는 방식
 
 
+## Database (BigData)
+- **RDS (Relational Database Service)**
+  - RDBMS 클라우드 서비스. MySQL, PostgreSQL, Oracle, SQL Server 지원
+  - EC2에 새로 Instance를 생성하고 직접 설치해서 사용할 수도 있지만 RDS를 사용할 경우 유지 보수 이슈를 획기적으로 줄임
+  - 서버에 직접 접근 권한이 없기 때문에 사용에 제한이 많기 때문에 서비스 종류나 기타 기업의 특성등을 잘 고려해서 선택
+
+- **DynamoDB**
+  - 아마존에서 서비스하는 NoSQL 데이터 베이스
+
+- **SDB (Simple Database)**
+  - 비정규방식 DB 서비스
