@@ -33,6 +33,7 @@ for index in range(10, 1, -1):
     - 내부 반복문 안에서 `data_list[stand] < data_list[num - 1]` 이면,
         - `data_list[num - 1], data_list[num] = data_list[num], data_list[num - 1]`
 
+- insertion_sort 함수 : 정렬 함수
 ```python
 def insertion_sort(data):
     for index in range(len(data) - 1):
@@ -44,6 +45,7 @@ def insertion_sort(data):
     return data
 ```
 
+- 함수 사용
 ```python
 import random
 
@@ -54,10 +56,10 @@ print (insertion_sort(data_list))
 ## 4. 알고리즘 분석
 
 - 반복문 2개
-    - $O(n^2)$
+    - O(n^2)
 - 최악의 경우
-    - $n*n(n-1)/2$
+    - n*n(n-1)/2
 - 완전 정렬이 되어 있는 상태 ⇒ 최선
-    - $O(n)$
+    - O(n)
 
 - 코드 이해 : [https://goo.gl/XKBXuk](https://goo.gl/XKBXuk)
