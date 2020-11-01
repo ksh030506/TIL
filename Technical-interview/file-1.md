@@ -39,3 +39,6 @@ Overriding(오버라이딩)
 - JSP(Java Server Page) : html기반의 Java코드를 블록화하여 삽입한 것(Java in HTML)
 
 
+## 6. **JDBC**
+- Java Data Base Connection의 약자로 Java언어를 통해 데이터 베이스에 접근 할 수 있는 프로그래밍을 의미한다.
+
