@@ -63,5 +63,3 @@ print (insertion_sort(data_list))
 - 완전 정렬이 되어 있는 상태 ⇒ 최선
     - O(n)
 
-
-
