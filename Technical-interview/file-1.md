@@ -34,4 +34,8 @@ Overriding(오버라이딩)
 - 상속에서 나온 개념
 - 상위 클래스(부모 클래스)의 메소드를 하위 클래스(자식 클래스)에서 재정의 하는 것이다.
 
+## **5. Servlet, JSP**
+- Servlet : Container가 이해할 수 있게 구성된 순수 자바 코드로만 이루어진 것 (HTML in Java)
+- JSP(Java Server Page) : html기반의 Java코드를 블록화하여 삽입한 것(Java in HTML)
+
 
