@@ -120,3 +120,6 @@ GET과 POST의 차이점
     - > Abstract는 일반 메소드를 사용할 수 있지만, Interface는 메서드 선언만 가능하다.
 
 
+## **11. Call by Reference, Call by Value**
+- Call by Reference : 개개 변수의 원래 주소에 값을 저장하는 방식, 클래스 객체를 인수로 전달한 경우
+- Call by Value : 인수로 기본 데이터형을 사용, 주어진 값을 복사하여 처리하는 방식, 메서드 내의 처리 결과는 메서드 밖의 변수에 영향을 미치지 않는다
