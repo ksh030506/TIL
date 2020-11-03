@@ -156,3 +156,16 @@ GET과 POST의 차이점
 ## *Garbage Collection(가비지 컬렉션)**
 - 시스템에서 더이상 사용하지 않는 동적 할당된 메모리 블럭을 찾아 자동으로 다시 사용 가능한 자원으로 회수하는 것으로 시스템에서 가비지컬렉션을 수행하는 부분을 가비지 컬렉터라 부른다.
 
+## **Primitive type과 Reference type**
+- Primitive type : 변수에 값 자체를 저장
+  - 정수형 : byte, short, int, long
+  - 실수형 : float, double
+  - 문자형 : char
+  - 논리형 : boolean
+  > Primitive type은 Wrapper Class통해 객체로 변형 할 수 있다.
+    > int => Integer, char => Character(int와 char를 제외한 Primitive type의 다른 자료형들은 맨 앞 알파벳을 대문자로 바꿔주면 된다. float => Float)
+
+- Reference type - 메모리상에 객체가 있는 위치를 저장
+  - 종류 : Class, Interface, Array 등
+
+
