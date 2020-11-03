@@ -224,7 +224,7 @@ GET과 POST의 차이점
 - `private` : 같은 클래스 내에서만 접근 가능
 
 
-## **소켓 통신(TCP/UDP)**
+## **20. 소켓 통신(TCP/UDP)**
 - `TCP(Transmission Control Protocol)`
   - 연결형 서비스 제공
   - 높은 신뢰성 보장
