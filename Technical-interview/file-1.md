@@ -169,3 +169,7 @@ GET과 POST의 차이점
   - 종류 : Class, Interface, Array 등
 
 
+## **Wrapper Class**
+- Primitive type으로 표현할 수 있는 간단한 데이터를 객체를 만들어주는 클래스
+
+
