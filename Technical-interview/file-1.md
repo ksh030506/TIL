@@ -224,3 +224,18 @@ GET과 POST의 차이점
 - `private` : 같은 클래스 내에서만 접근 가능
 
 
+## **소켓 통신(TCP/UDP)**
+- `TCP(Transmission Control Protocol)`
+  - 연결형 서비스 제공
+  - 높은 신뢰성 보장
+  - 연결의 설정(3-way handshaking)
+  - 연결의 해제(4-way handshaking)
+  - 데이터 흐름 제어, 혼잡 제어
+  - 전이중, 점대점 서비스(양방향 송수신 서비스)
+
+- `UDP(User Datagram Protocol)`
+  - 비연결형 서비스 제공
+  - 신뢰성이 낮음
+  - 데이터의 전송 순서가 바뀔 수 있음
+  - 데이터 수신 여부 확인 안함(3-way handshaking과 같은 과정 X)
+  - TCP보다 전송속도가 빠름
