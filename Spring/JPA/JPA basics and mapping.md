@@ -3,6 +3,8 @@
 - `@Id` : DB PK와 매핑할 필드
 
 ```java
+@Getter
+@Setter
 @Entity
 public class Member {
     @Id

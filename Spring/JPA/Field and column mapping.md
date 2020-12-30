@@ -23,6 +23,8 @@ hibernate.hbm2ddl.auto
 
  # 매핑 어노테이션
 ```java
+@Getter
+@Setter
 @Entity
 public class Member {
     @Id
