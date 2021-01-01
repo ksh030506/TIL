@@ -154,3 +154,45 @@ member.setTeam(teamB);
 ```
 
 
+# 양방향 매핑
+<img src="/img/img6.png">
+
+```java
+@Getter
+@Setter
+@Entity
+public class Member {
+    @Id @GeneratedValue
+    private Long id;
+
+    @Column(name = "USERNAME")
+    private String name;
+    private int age;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+}
+```
+
+```java
+//toString() 오버라이드하기
+@Getter
+@Setter
+@Entity
+public class Team {
+    @Id @GeneratedValue
+    private Long id;
+
+    private String name;
+
+    @OneToMany(mappedBy="team")
+    List<Member> members = new ArrayList<Member>();
+}
+```
+
+```java
+//조회
+Team findTeam = em.find(Team.class, team.getId());
+int memberSize = findTeam.getMember().size();
+```
