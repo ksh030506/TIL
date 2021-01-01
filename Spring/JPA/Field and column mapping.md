@@ -69,7 +69,7 @@ public class Member {
         @Lob
         private byte[] lobyte; //BLOB
      ```
- - `@Transient` : 이 필드는 매핑하지 않는다, 애플리케이션에서 DB에 저장하지 않는 필드
+ - `@Transient` : 이 필드는 매핑하지 않는다. 애플리케이션에서 DB에 저장하지 않는 필드
 
 # 식별자 매핑 어노테이션
 
@@ -81,14 +81,14 @@ private Long id;
 
 - `@Id`
 - `@GeneratedValue`
-  - `IDENTITY` : 데이터베이스에 위힘, MySQL
+  - `IDENTITY` : 데이터베이스에 위임, MySQL
   - `SEQUENCE` : 데이터베이스 시퀀스 오브젝트 사용, Oracl
     - `@SequenceGenerator` 필요
   - `TABLE` : 키 생성용 테이블 사용, 모든 DB에서 사용
     - `@TableGenerator` 필요
   - `AUTO` : 방언에 따라 자동 지정, 기본값
 
-# 권장하는 식별자 전력
+# 권장하는 식별자 전략
 - 기본키 제약 조건 : Null 아님, 유일, **변하면 안된다**
 - 미래까지 이 조건을 만족하지 자연키는 찾기 어렵다. 대리키(대체키)를 사용하자
 - 예를 들어 주민등록번호도 기본 키로 적절하지 않다.
