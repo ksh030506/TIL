@@ -193,4 +193,76 @@ em.remove(memberA);
         List<Member> members = query.getResultList();
         ```
 
+### 플러시 모드 옵션
+- FlushModeType.AUTO
+  - 커밋이나 쿼리를 실행할 때 플러시(기본값)
+- FlushModeType.COMMIT
+  - 커밋할 때만 플러시
+
+```java
+em.setFlushMode(FlushModeType.AUTO)
+```
+## 준영속 상태
+- 영속 => 준영속
+- 영속 상태의 엔티티가 영속성 컨텍스트에서 분리(detached)
+- 영속성 컨텍스트가 제공하는 기능을 사용 못함
+
+- 준영속 상태로 만드는 방법
+  - em.detach(entity)
+    - 특정 엔티티만 준영속 상태로 전환
+  - em.cear()
+    - 영속성 컨텍스트를 완전히 초기화
+  - em.elose()
+    - 영속성 컨텍스트를 종료
+
+# 프록시와 즉시로딩, 지연로딩
+### Member를 조회할 때 Team도 함께 조회해야 할까?
+- 단순히 member 정보만 사용하는 비즈니스 로직
+- println(member.getName())
+
+```java
+@Getter
+@Setter
+@Entity
+public class Member {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "USERNAME")
+    private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+}
+```
+<img src="/img/img25.png">
+
+### Member와 Team을 자주 함께 사용한다면??
+```java
+@Getter
+@Setter
+@Entity
+public class Member {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "USERNAME")
+    private String name;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+}
+```
+<img src="/img/img25.png">
+
+### 프로식와 즉시로딩 주의
+- **가급적 지연 로딩을 사용**
+- 즉시 로딩을 적용하면 예상하지 못한 SQL이 발생
+- 즉시 로딩은 JPQL에서 N+1 문제를 일으킨다
+- @ManyToOne, @OneToOne은 기본이 즉시 로딩 => LAZY로 설정
+- @OneToMany, @ManyToMany는 기본이 지연 로딩
 
