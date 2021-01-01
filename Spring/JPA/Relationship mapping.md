@@ -152,3 +152,5 @@ em.persist(teamB);
 //회원1에 새로운 팀B를 설정
 member.setTeam(teamB);
 ```
+
+
