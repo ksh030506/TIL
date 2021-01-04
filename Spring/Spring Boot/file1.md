@@ -19,5 +19,6 @@
 ## jar, war
 <img src="/img/img36.png">
 
+
 - 스프링 부트는 어노테이션 기반 작동
 
