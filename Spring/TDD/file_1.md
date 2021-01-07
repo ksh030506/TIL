@@ -120,3 +120,21 @@ public class AuthDomainTest {
 ## 단점
 - 테스트 법위가 작기 때문에 실제 환경과 차이가 발생합니다.
 
+## 예시 코드
+```java
+@RunWith(SpringRunner.class)
+@DataJpaTest
+@ActiveProfiles(TestProfile.TEST)
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@Ignore
+public class RepositoryTest {
+}
+```
+- `@DataJpaTest` 어노테이션을 활용하여 `Repository`에 대한 Bean만 등록합니다
+- `@DataJpaTest`는 기본적으로 메모리 데이터베이스에 대한 테스트를 진행합니다.
+- `@AutoConfigureTestDatabase` 어노테이션을 활용하여 profile에 등록되 데이터베이스 정보로 대체할 수 있습니다.
+- `JpaRepository`에서 기본적으로 제공해주는 `findById`, `findByAll`, `deleteById`등은 테스트를 하지 않습니다.
+  - 기본적으로 `save()` null 제약조건등의 테스트는 진행
+  - 주로 커스텀하게 작성한 쿼리 메서드, `@Query`으로 작성된 JQPL등의 커스텀하게 추가된 메서드를 테스트합니다.
+
+
