@@ -22,3 +22,101 @@
 - POJO 객체이므로 테스트하기 편합니다. **외부에서 주입 받을 의존성도 없고 Mocking할 대상**도 없습니다.
 - **엔티티 객체는 사용하는 계층이 많으므로 테스트의 효율성**이 높습니다.
 
+## 예시 코드
+```java
+package com.gsm.jupjup.domain;
+
+import com.gsm.jupjup.dao.AuthRepository;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+
+public class AuthDomainTest {
+
+    @Autowired
+    private AuthRepository authRepository;
+
+    //insert Test
+    @Test
+    public void insert(){
+        final AuthDomain authDomain = AuthDomain.builder()
+                .email("s19066@gsm.hs.kr")
+                .password("123")
+                .classNumber("9999")
+                .name("김상현")
+                .build();
+
+        final String email = authDomain.getEmail();
+        final String password = authDomain.getPassword();
+        final String classNumber = authDomain.getClassNumber();
+        final String name = authDomain.getName();
+
+        assertThat(email, is("s19066@gsm.hs.kr"));
+        assertThat(password, is("123"));
+        assertThat(classNumber, is("9999"));
+        assertThat(name, is("김상현"));
+    }
+
+    //Auth LapTop 연관관계 테스트
+    @Test
+    public void Auth_Laptop(){
+        final LaptopDomain laptopDomain = LaptopDomain.builder()
+                .laptopName("Mac Pro")
+                .laptopbrand("Apple")
+                .laptopSerialNumber("1234h12kj34hkl123h4kl123jh4")
+                .build();
+        final AuthDomain authDomain = AuthDomain.builder()
+                .email("s19066@gsm.hs.kr")
+                .password("123")
+                .classNumber("9999")
+                .name("김상현")
+                .laptopDomain(laptopDomain)
+                .build();
+
+        final String username = authDomain.getName();
+        final String laptopName = authDomain.getLaptopDomain().getLaptopName();
+
+        assertThat(username, is("김상현"));
+        assertThat(laptopName, is("Mac Pro"));
+    }
+
+    //Auth Equipment_Allow 연관관계 테스트
+    @Test
+    public void Auth_EquipmentAllow(){
+        final EquipmentAllowDomain equipmentAllowDomain = EquipmentAllowDomain.builder()
+                .name("김상현")
+                .amount(9)
+                .reason("이유")
+                .equipmentEnum(EquipmentEnum.ROLE_Accept)
+                .build();
+        final AuthDomain authDomain = AuthDomain.builder()
+                .email("s19066@gsm.hs.kr")
+                .password("123")
+                .classNumber("9999")
+                .name("김상현")
+                .equipmentAllowDomain(equipmentAllowDomain)
+                .build();
+
+        final String email = authDomain.getEmail();
+        final String why = authDomain.getEquipmentAllowDomain().getReason();
+
+        assertThat(email, is("s19066@gsm.hs.kr"));
+        assertThat(why, is("이유"));
+    }
+}
+```
+
+# Repository Test
+## 장점
+- Repository 관련된 Bean들만 등록하기 때문에 통합 테스트에 비해서 빠릅니다.
+- **Repository에 대한 관심사만 갖기 때문에 테스트 범위가 작습니다.**
+
+## 단점
+- 테스트 법위가 작기 때문에 실제 환경과 차이가 발생합니다.
+
