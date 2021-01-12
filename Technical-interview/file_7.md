@@ -65,5 +65,3 @@
         - Properties : key value 쌍으로 저장되지만 value의 타입이 String만 가능하다.
 
         - Hashtable : HashMap과 구조는 같으며, 단지 Synchronized(동기화) 되어져 있다는 점이 다른점이다.
-
-
