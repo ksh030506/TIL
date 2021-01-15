@@ -8,7 +8,6 @@
 
 
 ## **2. 알고리즘 설명**
-
 - 데이터가 두 개 일때
     - 예 : data_list = `[ 9, 1 ]`
         - `data_list[0] > data_list[1]` 이므로 `data_list[0]`의 값과 `data_list[1]` 값을 교환
@@ -23,7 +22,6 @@
         - 세 번째 실행하면 변화 없음
 
 ## **3. 알고리즘 구현**
-
 1. `for stand in range(len(data_list) - 1)` 로 반복
 2. `lowest = stand` 로 놓고,
 3. `for num in range(stand, len(data_list)) stand `이후부터 반복
@@ -32,7 +30,6 @@
 4. `data_list[num], data_list[lowest] = data_list[lowest], data_list[num]`
 
 ## **4. Code 구현**
-
 - selection_sort함수 : 선택정렬 하는 함수
 ```python
 def selection_sort(data):
@@ -52,7 +49,6 @@ import random
 data_list = random.sample(range(100), 10)
 selection_sort(data_list)
 ```
-
 ## **5. 알고리즘 분석**
 - 반복문 2개
     - `O(n^2)`
