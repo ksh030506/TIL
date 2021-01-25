@@ -62,7 +62,3 @@ def factorial(n):
     else:
         return 1
 ```
-
-
-
-
