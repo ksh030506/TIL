@@ -23,14 +23,14 @@
 - 소프트웨어 요소는 확장에는 열려 있으나 변경에는 닫혀 있어야 한다
 - 확장을 하려면, 당연히 기존 코드를 변경??
 - **다형성 활용**
-  - 인터페이스를 구현한 새로운 클래스를 하나 만들어서 새로운 기능을 구현
+  - 인터페이스를 구현한 새로운 클래스를 하나 만들어서 새로운 기능을 구현 
 
-## OCP : 개발-폐쇄 원칙(Open/Closed Principle) - 문제점
-- MemberService 클라이언트가 구현 클래스를 직접 선택
+## OCP : 개발-폐쇄 원칙(Open/Closed Principle) - 문제점 
+- MemberService 클라이언트가 구현 클래스를 직접 선택 
 - ```java
-    MemberRepository m = new MemoryMemberRepository(); //기존 코드
+    MemberRepository m = new MemoryMemberRepository(); //기존 코드 
     MemberRepository m = new JdbcMemberRepository(); //변경 코드
-  ```
+  ``` 
 - **구현 객체를 변경하려면 클라이언트 코드 변경**
 - **분명 다형성을 사용했지만 OCP 원칙을 지킬 수 없다**
 > 문제 해결 : **객체를 생성하고, 연관관계를 맺어주는 별도의 조립, 설정자가 필요**
