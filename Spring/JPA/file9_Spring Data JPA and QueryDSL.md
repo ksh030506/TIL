@@ -54,7 +54,7 @@ public class MemberRepository extends JpaRepository<Member, Long>{
 List<Member> member = MemberRepository.findByName("hello");
 ```
 > 실행된 SQL
-> select * from Member m where m.name = 'hello'
+> select * from Member m where m.name = 'hello' 
 
 ## 이름으로 검색 + 정렬
 ```java
