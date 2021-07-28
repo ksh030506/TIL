@@ -3,13 +3,11 @@
 ## REST
 
 REpresentational State Transfer
-
 표현, 상태, 전달
 
 > 자원의 표현을 가지고 상태 전달
 
 자원의 표현 ⇒ HTTP URI
-
 상태 전달 ⇒ HTTP Method
 
 ## RESTful
@@ -103,7 +101,7 @@ REST란 아키텍텨 스타일의 제약조건을 모두 만족하는 시스템
 
 - 일반적인 서비스에서 60 ~ 80% 가량의 트랜잭션이 Select와 같은 조회성 트랙잭션
 - GET은 얼마든지 호출해도 매번 같은 결과를 만들어내므로 캐싱이 가능하다
-
+- 
 ---
 
 ## 4. Uniform Interface
