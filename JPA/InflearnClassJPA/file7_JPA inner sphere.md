@@ -265,4 +265,3 @@ public class Member {
 - 즉시 로딩은 JPQL에서 N+1 문제를 일으킨다
 - @ManyToOne, @OneToOne은 기본이 즉시 로딩 => LAZY로 설정
 - @OneToMany, @ManyToMany는 기본이 지연 로딩
-

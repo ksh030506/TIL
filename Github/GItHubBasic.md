@@ -24,4 +24,3 @@ git diff '버전id1'..'버전id2'
 ```
 git diff
 ```
-
