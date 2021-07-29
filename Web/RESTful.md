@@ -1,7 +1,6 @@
 # RESTful
 
 ## REST
-
 REpresentational State Transfer
 표현, 상태, 전달
 
@@ -11,11 +10,9 @@ REpresentational State Transfer
 상태 전달 ⇒ HTTP Method
 
 ## RESTful
-
 REST란 아키텍텨 스타일의 제약조건을 모두 만족하는 시스템
 
 ## REST 아키텍쳐의 제약조건
-
 1. Clinet - Server
 2. Stateless
 3. Cache
