@@ -39,10 +39,30 @@ graph = {
 }
 
 
-def recursive_dfs(start_vertex, visited=[]):
-    visited.append(start_vertex)
+# 재귀로 구현한 코드
+def recursive_dfs(vertex, visited=[]):
+    visited.append(vertex)
     print(visited)
-    for item in graph[start_vertex]:
+    for item in graph[vertex]:
         if not item in visited:
             visited = recursive_dfs(item, visited)
     return visited
+
+# 스택으로 구현한 코드
+
+
+def stack_dfs(start_vertex):
+    visited = []
+    stack = [start_vertex]
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            visited.append(vertex)
+            print(visited)
+            for item in graph[vertex]:
+                stack.append(item)
+    return visited
+
+
+recursive_dfs('A')
+stack_dfs('A')
