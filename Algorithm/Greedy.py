@@ -12,8 +12,10 @@ def money(n, lst=[500, 100, 50, 10]):
     cnt = 0
     for i in lst:
         cnt += n // i
+        print("n = ", n)
+        print("i = ", i)
         n %= i
-    print(cnt)
+    print("cnt = ", cnt)
     return cnt
 
 

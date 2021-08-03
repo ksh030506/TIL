@@ -11,7 +11,6 @@
 # 3. 그 다음 지점을 큐에서 뽑고
 # 4. 그 지점의 하위 경로를 다시 큐에 넣고.. 하는 식으로 진행된다.
 # 이렇게 구현하면 먼저 넣은 지점들부터 탐색하고 그 후 그 지점들의 하위 지점들을 탐색하는 식으로 진행된다.
-# 참고로 BFS는 재귀로 동작하지 않는다.
 
 # 코드
 # 인접간선 설명
@@ -31,12 +30,12 @@ def iterative_bfs(start_vertex):
     visited = [start_vertex]
     queue = [start_vertex]
     while queue:
-        vertex = queue.pop(0)xw
+        vertex = queue.pop(0)
         for item in graph[vertex]:
             if item not in visited:
-                print(visited)
                 visited.append(item)
                 queue.append(item)
+    print(visited)
     return visited
 
 

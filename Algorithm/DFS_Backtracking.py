@@ -65,4 +65,4 @@ def stack_dfs(start_vertex):
 
 
 recursive_dfs('A')
-stack_dfs('A')
+# stack_dfs('A')
