@@ -31,7 +31,7 @@ def iterative_bfs(start_vertex):
     visited = [start_vertex]
     queue = [start_vertex]
     while queue:
-        vertex = queue.pop(0)
+        vertex = queue.pop(0)xw
         for item in graph[vertex]:
             if item not in visited:
                 print(visited)
