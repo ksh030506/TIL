@@ -104,3 +104,11 @@
   1. UserPass Auth method는 사용자 인증에 username / PW를 사용한다.
   2. github auth method는 사용자에 대해 GitHub을 통한 인증을 허용한다.
 
+### Audit Device
+
+- **모든 Vault의 Request/Respones는 Audit Device에 의해 감사 로깅이 된다.**
+
+### Client Token
+
+- **HTTP에서의 세션 ID와 같은 토큰을 반환한다.**
+- Vault의 REST API를 사용하는 경우 `HTTP 헤더에 토큰`을 적재한다.
