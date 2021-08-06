@@ -59,7 +59,58 @@
 
 
 ## Vault 아키텍처
+
 <img src="../img/vault_architecture.png">
+
+## Vault의 전체적인 흐름
+
+- Vault를 사용하기 위해서는 `unsealing`과 `초기화 작업`이 필요하다.
+- Vault 서버 초기화 시 Vault는 `sealed` 상태이다.
+- `Unsealed-Key`는 `sealed` 상태를 `unsealed` 상태로 전이할 수 있다.
+- `unsealed` 상태가 되면 Barrier안에 있는 Vault의 모든 기능 및 구성요소에 원활하게 접근할 수 있다.
+- Vault에서 실질적으로 Secret을 암/복호화하는 키는 `Encryption-Key`이다.
+    ```
+    1) "Master-Key"는 “Encryption-Key”를 암호화한다.
+
+    2) "Unsealed-Key"는 “Master-Key”를 암호화한다.
+
+    3) “Unsealed-key”는 SSS(Shamir Secret Sharing) 알고리즘으로분할 보관한다.
+    ```
+
+- 키들의 관계는 다음과 같다.
+    <img src="../img/Vault%20Crypto-Key%20mechanism.png">
+    - `Encryption-Key`는 `Secret`을 안전하게 암/복호화한다. 
+    - `Secret`들은 `Storage backend`에 보관하며, `Secret`에 접근하기 위해서는 `REST API`를 사용한다. 
+    - REST API는 `Create, Register, Rotate, Destroy` 등의 명령을 제공하며, `Secret`을 제어할 수 있다. 
+    - REST API를 사용하기 위해서는 `토큰 인증`과 `토큰에 상응하는 정책 인가` 작업이 필요하다.
+
+## 고가용성
+
+- **Vault는 HA를 구성할 수 있다.**
+  - HA의 구조는 Active-Standby 구조이다. 
+- 오픈 소스 버전의 경우 Standby는 Read-Only 기능을 제공하지 않는다.
+- Standby에 요청이 들어오면 요청을 Active에 포워딩한다.
+- 제일 큰 단점은 Standby의 read-only의 미지원이다. Product 레벨에서 Vault를 사용하기 위해서는 해당 기능이 제일 필요할 것 같다.
+- **Replication 방식은 PostgreSQL의 방식과 같이 Active-Standby 구성이며,** Active의 변경/추가/삭제된 것에 대한 로그(WAL, Write Ahead Log)를 Standby에 전송한다.
+- 데이터 처리에 있어 보통의 DBMS과 같이 WAL 기법을 사용한다.
+
+## 보안 특성
+
+- Vault와 클라이언트 상호 인증은 제공하지 않는다. 다만 서버에서 제공하는 네트워크 계층 보안, TLS를 제공한다.
+- 정상 토큰을 보유한 주체는 리소스("Secret")에 접근할 수 있다.
+- 토큰 인가 정책은 리소스에 접근하는 주체를 제어한다.
+- Secret에 접근하는 모든 행위를 감사 로깅한다.
+- "Secret"을 암호화하여 Storage Backend에 저장한다.
+- Vault의 Barrier를 통과하는 모든 요청과 반환은 AES-256(GCM)으로 암호화한다. IV의 경우, 자동으로 임의로 생성한다.
+- SSS(Shamir Secret Sharing) 알고리즘으로 MasterKey를 분리 보관한다.
+
+## Key 회전(갱신)
+
+- rekey 명령은 Unsealed-Key와 Master-Key를 갱신한다.
+- 갱신된 Master-Key는 Encryption-Key를 재암호화하며, 갱신된 Unsealed-Key는 SSS에 의해 다시 분리하여 보관하여야 한다.
+- rotate 명령은 Encryption-Key를 갱신한다.
+- 기존 Encryption-Key는 별도의 keyring에 보관한다. 후의 요청들은 새로운 Encryption-Key로 암호화를 한다.
+- Keyring에 있는 Encryption-Key는 복호화 용도에만 사용한다. 이와 같이 사용하면 re-encryption을 수행하지 않아도 괜찮다.
 
 ## Vault 용어 정리
 
