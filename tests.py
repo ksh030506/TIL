@@ -7,7 +7,7 @@ data = {
     "grant_type": "authorization_code",
     "client_id": "475eeac2ef5afa6af598830e6720ecc6",
     "redirect_uri": "https://localhost.com",
-    "code": "aNiJfi0wijzqTxBEWW3CwmCvAmbwsDJ_NnRQrfSGoQTzZxz2VqEirlsJouzd4uKOFyD02Ao9c00AAAF7escZWA"
+    "code": ""
 
 }
 response = requests.post(url, data=data)
