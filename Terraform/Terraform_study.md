@@ -86,4 +86,22 @@ provider "aws" {
   secret_key = "<AWS_SECRET_KEY>"
   region = "ap-northeast-2"
 }
-```  
+```
+region은 리소스를 정의할 AWS리전을 의미합니다. 여기서 사용한 `ap-northeast-2`은 서울 리전을 의미합니다.
+
+### 테라폼 프로젝트 초기화
+루트 디렉터리에서 `terraform init` 명령어를 실행합니다.
+
+## 첫 번째 이터레이션 : EC2용 SSH 키 페어 정의
+지금까지 테라폼을 사용하기위한 준비 작업이었다면, 이제 AWS 리소스를 정의할 차례입니다. 첫번째 리소스는 `aws_key_pair`입니다.  
+이 리소스는 AWS EC2를 생성할 때 사용되는 리소스입니다. EC2 인스턴스를 생성하더라도 `key_pair`가 없다면 생성한 인스턴스에 접근할 수 없습니다.
+따라서 인스턴스를 생성하기 전에 키 페이를 먼저 생성해야합니다.
+
+### 첫 번째 스탭 : HCL언어로 필요한 리소스를 정의
+`web_infra.tf`에 다음과 같은 내용을 추가해줍니다.
+```
+resource "aws_key_pair" "web_admin" {
+  key_name = "web_admin"
+  public_key = "<PUBLIC_KEY>"
+}
+```

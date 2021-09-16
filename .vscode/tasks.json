@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dart",
+			"command": "dartdoc",
+			"problemMatcher": [],
+			"label": "dart: dartdoc"
+		}
+	]
+}
