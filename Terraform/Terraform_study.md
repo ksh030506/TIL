@@ -105,3 +105,34 @@ resource "aws_key_pair" "web_admin" {
   public_key = "<PUBLIC_KEY>"
 }
 ```
+주의 : `resource` 키워드 다음에 `"aws_key_pair"` `"web_admin"`과 같이 두개의 문자열이 온다는 것입니다. 
+
+**첫 번쨰 문자열은 리소스 타입입니다.**
+이 자리에 올 수 있는 값들은 프로바이더에서 제공하는 리소스 타입의 이름들로 한정되어 있습니다.  
+
+**두 번쨰 문자열은 이 리소스에 임의로 붙이는 이름입니다.**
+이 이름은 테라폼 코드의 다른 곳에서 이 리소스를 찹조하기 위해서 사용합니다.
+리소스 타입과 이름을 `.`으로 이어 `aws_key_pair.web_admin`과 같은 형식으로 참조합니다.
+
+`key_name`은 AWS 상에 현재 정의하는 키 페어를 등록할 이름입니다.  
+필수는 아니지만 편의를 위해 리소스의 이름과 같은 이름을 사용하는 것을 권장합니다.
+
+`public_key`에는 접속에 사용할 공개키의 값을 넣어야합니다. 로컬 환경에 미리 생성해둔 SSH키가 있다면 이 키를 사용해도 무방합니다.
+
+```
+$ ssh-keygen -t rsa -b 4096 -C "<EMAIL_ADDRESS>" -f "$HOME/.ssh/web_admin" -N ""
+```
+명령어를 실행하고 `~/.ssh` 디렉터리를 확인하면 `web_admin`과 공개키 `web_admin.pub` 두 개의 파일이 생성되어 있을 것입니다.  
+
+```
+public_key = file("~/.ssh/web_admin.pub")
+```
+다음과 같이 공개키의 경로를 `public_key` 속성을 지정합니다.
+
+```
+resource "aws_key_pair" "web_admin" {
+  key_name = "web_admin"
+  public_key = file("~/.ssh/web_admin.pub")
+}
+```
+> 최종적인 코드는 다음과 같습니다.
