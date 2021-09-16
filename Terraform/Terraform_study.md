@@ -170,6 +170,54 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 <img src="../img/terrform1.png">
 
-**리소스를 추가하기 전의 최초 상태**
+**<리소스를 추가하기 전의 최초 상태>**
 
+테라폼의 가장 중요한 역할은 실제 상태를 이상적인 상태와 동일하게 만드는 일입니다.
+테라폼에서는 이 작업을 **적용한다(apply)**고 표현합니다. **테라폼 plan은 apply하기 전에 이상적인 상태와 실제 상태를 비교해 둘을 동일하게 만들기 위해서 해야할 일을 찾아내는 작업**입니다.
+
+이 예제에서 aws_key_pair.web_admin 리소스는 이상적인 상태에만 존재하고 실제 상태에는 존재하지 않습니다. 따라서 테라폼이 실제 상태를 이상적인 상태와 동일하게 만들기 위해서는 실제 상태에 aws_key_pair.web_admin 리소스를 생성해야 합니다.
+
+<img src="../img/terraform2.png">
+
+**<terraform plan이 보여주는 리소스 생성 계획>**
+
+> 이게 바로 + resource "aws_key_pair" "web_admin"이 의미하는 바입니다. 그 아래로 보여지는 정보들은 새로 추가될 리소스의 속성들입니다. 
+
+### 세 번쨰 스텝 : 선언된 리소스들을 아마존 웹 서비스에 적용(Apply)
+
+`plan`을 통해 확인한 내용을 실제로 프로바이더에 적용해봅니다. `terraform apply` 명령어를 실행합니다.
+
+```sh
+$ terraform apply
+...
+Terraform will perform the following actions:
+
+  # aws_key_pair.web_admin will be created
+  + resource "aws_key_pair" "web_admin" {
+      + fingerprint = (known after apply)
+      + id          = (known after apply)
+      + key_name    = "web_admin"
+      + key_pair_id = (known after apply)
+      + public_key  = "ssh-rsa ..."
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+```
+리소스를 생성하기 전에 plan 결과를 보여주고 **yes를 입력해야만 리소스를 생성합니다.** 
+
+<img src="../img/terraform3.png">
+
+**<정상적으로 aws_key_pair.web_admin 리소스가 생성된 것을 확인할 수 있습니다. 추가된 리소스는 웹 콘솔의 EC2 서브 메뉴에서도 확인할 수 있습니다.>**
+
+앞서 설명했듯이 테라폼은 로컬에 정의된 이상적인 상태와 실제 상태를 동일하게 만듭니다. 계획에서 보여준대로 실제 상태에 aws_key_pair.web_admin 리소스를 생성했습니다.
+
+<img src="../img/terraform4.png">
+
+**<tf 파일들에 정의된 리소스들을 AWS에 적용한 후의 상태>**
 
