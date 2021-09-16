@@ -221,3 +221,57 @@ Do you want to perform these actions?
 
 **<tf 파일들에 정의된 리소스들을 AWS에 적용한 후의 상태>**
 
+이제 이상적인 상태와 실제 상태는 같습니다. 이 상태에서 `terraform plan`을 실행해봅니다.
+
+```sh
+$ terrafrom plan
+...
+aws_key_pair.web_admin: Refreshing state... [id=web_admin]
+
+------------------------------------------------------------------------
+
+No changes. Infrastructure is up-to-date.
+```
+
+현재 상태를 최신화하고 다시 두 상태를 비교합니다. 결과는 No changes. **즉, 두 상태가 같기 때문에 더 이상 변경할 게 없다는 의미입니다.** 테라폼에서 리소스를 선언적으로 정의한다는 의미는 여기에서도 잘 드러납니다.
+
+**테라폼의 리소스 정의는 어떤 리소스를 생성하라는 절차적인 명령어가 아닙니다. 단지 이상적인 상태를 정의할 뿐입니다.** 따라서 `terraform apply`를 여러번 실행하더라도 아무런 일도 일어나지 않습니다.
+
+`terraform apply`를 실행하고 나면 프로젝트 상에 중요한 변화가 하나 생깁니다. 작업 디렉터리 아래에 `terraform.tfstate` 파일이 하나 생성됩니다. **이 파일에는 실제 상태를 임시로 저장하는 동시에 테라폼에서 관리되는 리소스의 목록을 관리합니다.**
+
+## 두 번쨰 이터레이션 : SSH 접속 허용을 위한 시큐리티 그룹
+두 번째로 정의할 리소스는 `aws_security_group`입니다.  
+이 리소스 역시 키 페어와 마찬가지로 인스턴스를 정의하는 데 필요합니다.  
+**인스턴스를 생성해도 밖에서 접근할 수 있는 방법이 없다면 사용할 수가 없습니다.**
+따라서 SSH port를 외부에 열어주는 시큐리티 그룹을 만들 필요가 있습니다. 다음 내용을 `web_infra.tf` 맨 아래에 추가해줍니다.
+
+```sh
+resource "aws_security_group" "ssh" {
+  name = "allow_ssh_from_all"
+  description = "Allow SSH port from all"
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+
+`name`과 `description`에는 각각 시큐리티 그룹의 이름과 설명을 기입합니다. 여기서 특이한 점은 **ingress 속성에 직접 값을 지정하는 대신 중괄호 블록이 따라온다는 점입니다.** `ingress`는 **인바운드 트래픽**을 정의하는 속성으로 **시큐리티 그룹에는 ingress 블록이 하나 이상 올 수 있습니다.**
+
+`ingress` 블록 안에는 **from_port, to_port, protocol, cidr_blocks** 속성을 지정합니다.
+
+`from_port`와 `to_port`는 열어줄 **포트의 범위를 의미**합니다.  
+예를 들어 from_port가 60001이고 to_port가 60010이면, 60001부터 60010까지 10개의 포트를 열어줍니다. 여기서는 SSH(22) 포트만 허용하므로 둘 다 22로 지정합니다.
+
+`protocol`은 통신에 사용할 **프로토콜**입니다. SSH는 TCP를 사용하므로 tcp를 지정합니다.
+
+마지막으로 `cidr_blocks`은 배열로 **시큐리티 그룹을 적용할 사이더 범위를 지정**합니다. 여기서 지정된 0.0.0.0/0은 모든 IP에서 접속을 허용한다는 의미입니다.
+
+이제 plan을 실행하고 apply를 실행해줍니다.
+
+<img src="../img/terraform5.png">
+
+**<AWS에 시큐리티 그룹 적용>**
+
