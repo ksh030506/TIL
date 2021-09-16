@@ -6,12 +6,12 @@
 
 ### 테라폼 설치
 - `Mac`에서는 `Homebrew`를 사용해 간단히 설치 가능합니다.
-  ```
+  ```sh
     $ brew install terraform
   ```
 
 - 버전 확인
-  ```
+  ```sh
     $ terraform version
   ```
 
@@ -19,7 +19,7 @@
 - 특정 버전의 테라폼을 사용하고 싶거나, 여러 버전을 사용할 필요가 있을 때는 `tfenv`를 사용하면 편리합니다.
 - `tfenv`는 테라폼 버전 매니저로 `Mac`, `Linux`, `Windows`를 지원하고 있습니다.
   <br>
-  ```
+  ```sh
     $ brew install tfenv
     $ tfenv install 0.12.23
     $ tfenv use 0.12.23
@@ -67,12 +67,11 @@
 ### 두 번째 단계 - HCL로 리소스 정의하고 AWS에 프로비저닝
 
 #### AWS 프로바이더 정의
-```
+```sh
 $ mkdir web_infra
 $ cd web_infra
 $ touch provider.tf web_infra.tf
 ```
-
 
 > 디렉터리 이름과 파일 이름에 특별한 원칙은 없습니다.
 > 테라폼은 기본적으로 특정 디렉터리에 있는 모든 .tf 확장자를 가진 파일을 전부 읽어들인 후, 리소스 생성, 수정, 삭제 작업을 진행합니다. 
@@ -80,7 +79,7 @@ $ touch provider.tf web_infra.tf
 
 
 - HCL AWS 프로바이더 정의 (provider.tf)
-```
+```sh
 provider "aws" {
   access_key = "<AWS_ACCESS_KEY>"
   secret_key = "<AWS_SECRET_KEY>"
@@ -99,7 +98,7 @@ region은 리소스를 정의할 AWS리전을 의미합니다. 여기서 사용�
 
 ### 첫 번째 스탭 : HCL언어로 필요한 리소스를 정의
 `web_infra.tf`에 다음과 같은 내용을 추가해줍니다.
-```
+```sh
 resource "aws_key_pair" "web_admin" {
   key_name = "web_admin"
   public_key = "<PUBLIC_KEY>"
@@ -119,20 +118,45 @@ resource "aws_key_pair" "web_admin" {
 
 `public_key`에는 접속에 사용할 공개키의 값을 넣어야합니다. 로컬 환경에 미리 생성해둔 SSH키가 있다면 이 키를 사용해도 무방합니다.
 
-```
+```sh
 $ ssh-keygen -t rsa -b 4096 -C "<EMAIL_ADDRESS>" -f "$HOME/.ssh/web_admin" -N ""
 ```
 명령어를 실행하고 `~/.ssh` 디렉터리를 확인하면 `web_admin`과 공개키 `web_admin.pub` 두 개의 파일이 생성되어 있을 것입니다.  
 
-```
+```sh
 public_key = file("~/.ssh/web_admin.pub")
 ```
 다음과 같이 공개키의 경로를 `public_key` 속성을 지정합니다.
 
-```
+> 최종적인 코드는 다음과 같습니다.
+```sh
 resource "aws_key_pair" "web_admin" {
   key_name = "web_admin"
   public_key = file("~/.ssh/web_admin.pub")
 }
 ```
-> 최종적인 코드는 다음과 같습니다.
+
+### 두 번쨰 스텝 : 선언한 리소스들이 생성가능한지 계획(Plan)을 확인
+앞서 작성한 `aws_key_pair` 리소스를 실제로 AWS에 생성할 수 있는지 확인해야합니다.
+
+`terraform plan`을 실행합니다.  
+명령어를 사용하면 현재 정의되어있는 리소스들을 실제로 프로바이더에 적용했을 때 테라폼이 어떤 작업을 수행할지 계획을 보여줍니다.
+
+```sh
+$ terraform plan
+...
+Terraform will perform the following actions:
+
+  # aws_key_pair.web_admin will be created
+  + resource "aws_key_pair" "web_admin" {
+      + fingerprint = (known after apply)
+      + id          = (known after apply)
+      + key_name    = "web_admin"
+      + key_pair_id = (known after apply)
+      + public_key  = "ssh-rsa ...."
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
+
+테라폼 앞에 있는 + 문자는 리소스를 생성하겠다는 의미입니다.
+
