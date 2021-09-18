@@ -274,3 +274,40 @@ resource "aws_security_group" "ssh" {
 <img src="../img/terraform5.png">
 
 **<AWS에 시큐리티 그룹 적용>**
+
+## 세 번쨰 이터레이션 : EC2 인스턴스 정의
+
+앞서 정의한 키 페어와 시큐리티 그룹을 사용해 **EC2 인스턴스**를 정의할 차례이지만, 
+그 전에 한 가지 추가할 내용이 있습니다. 바로 **VPC의 기본(default) 시큐리티 그룹을** 불러오는 일입니다.  
+`aws_security_group` 데이터 소스를 사용해, 미리 정의된 시큐리티 그룹을 불러올 수 있습니다.
+
+```sh
+data "aws_security_group" "default" {
+  name = "default"
+}
+```
+
+> #### 추가 필터를 사용해 시큐리티 그룹 찾기
+> VPC가 하나가 아니거나 별도로 default와 같은 이름으로 시큐리티 그룹을 생성한 적이 있다면, 찾고자 하는 리소스가 유일하다고 보장할 수 없습니다.
+> 이 경우 `id`, `vpc_id`, `tags`와 같은 추가적인 필터를 사용해서 정확하게 사용하고자 하는 VPC의 default 시큐리티 그룹을 참조해야합니다.
+  ```sh
+  data "aws_security_group" "default" {
+    name = "default"
+    id = "<SECURITY_GROUP_ID>"
+  }
+  ```
+
+EC2 인스턴스를 정의하는 리소스는 `aws_instance`입니다.
+
+```sh
+resource "aws_instance" "web" {
+  ami = "ami-0a93a08544874b3b7" # amzn2-ami-hvm-2.0.20200207.1-x86_64-gp2
+  instance_type = "t2.micro"
+  key_name = aws_key_pair.web_admin.key_name
+  vpc_security_group_ids = [
+    aws_security_group.ssh.id,
+    data.aws_security_group.default.id
+  ]
+}
+```
+
