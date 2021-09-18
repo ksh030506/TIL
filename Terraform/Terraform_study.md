@@ -274,4 +274,3 @@ resource "aws_security_group" "ssh" {
 <img src="../img/terraform5.png">
 
 **<AWS에 시큐리티 그룹 적용>**
-
