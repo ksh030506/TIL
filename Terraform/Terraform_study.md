@@ -324,3 +324,24 @@ resource "aws_instance" "web" {
 
 이제 `terraform plan`와 `terraform apply`를 실행합니다.
 
+<img src="../img/terraform6.png">
+
+**<웹 콘솔에서 테라폼으로 생성한 EC2 인스턴스 확인>**
+
+정상적으로 인스턴스가 생성되었음을 확인할 수 있습니다. 
+`terraform console`을 실행하면 대화형 콘솔에서 생성된 리소스의 속성을 확인해볼 수 있습니다. **SSH 접속을 위해** `aws_instance.web.public_ip`를 조회해봅니다.
+
+```sh
+$ terraform console
+> aws_instance.web.public_ip
+```
+
+**SSH로 출력된 IP에 접속**합니다. -i 옵션에는 앞서 생성한 비밀키 경로를 지정해줍니다. 로그인 아이디에는 아마존 리눅스의 기본 유저인 `ec2-user`를 사용합니다.
+
+```sh
+$ ssh -i ~/.ssh/web_admin ec2-user@<IP>
+```
+
+**성공적으로 SSH로 접속할 수 있습니다.**
+
+## 네 번째 이터레이션: RDS 인스턴스 정의
