@@ -370,3 +370,32 @@ RDS 인스턴스 리소스는 `aws_db_instance`입니다. 이름은 `web_db`로 
 - `password` : 암호
 - `skip_final_snapshot` : 인스턴스 제거 시 최종 스냅샷을 만들지 않고 제거할 지를 결정합니다. 기본값은 false입니다. 단, 이 경우 테라폼에서 인스턴스 삭제가 어려우므로, 여기서는 true를 지정해줍니다.
 
+`plan`과 `apply` 명령어를 실행해봅니다.
+
+<img src="../img/terraform7.png">
+
+**<웹 콘솔에서 테라폼으로 생성한 RDS 확인>**
+
+## 프로비저닝된 인프라스트럭처 일괄 종료
+테라폼의 장점은 단순히 코드로 인프라를 생성하는 데만 있지는 않습니다. **생성한 인프라 전체를 한 번에 종료하는 기능도 지원**합니다. 이해를 돕기 위해 잠시 `web_infra.tf`을 다른 곳으로 옮겨두겠습니다.
+
+```sh
+$ mv web_infra.tf /tmp/
+```
+
+즉, 프로젝트 디렉터리에는 `provider.tf`만 남아있는 상태입니다. 이 상태에서 `terraform plan` 실행하면 어떻게 될까요?
+
+```sh
+$ terraform plan
+...
+  - resource "aws_db_instance" "web_db" {
+...
+  - resource "aws_instance" "web" {
+...
+  - resource "aws_key_pair" "web_admin" {
+...
+  - resource "aws_security_group" "ssh" {
+
+Plan: 0 to add, 0 to change, 4 to destroy.
+```
+
