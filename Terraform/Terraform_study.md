@@ -346,3 +346,27 @@ $ ssh -i ~/.ssh/web_admin ec2-user@<IP>
 
 ## 네 번째 이터레이션: RDS 인스턴스 정의
 
+웹 서비스 실행을 위한 마지막 리소스입니다. 이번에는 AWS가 직접 관리해주는 데이터베이스 서비스 RDS의 MySQL 리소스를 생성해보겠습니다. 
+
+```sh
+resource "aws_db_instance" "web_db" {
+  allocated_storage = 8
+  engine = "mysql"
+  engine_version = "5.6.35"
+  instance_class = "db.t2.micro"
+  username = "admin"
+  password = "<DB_PASSWORD>"
+  skip_final_snapshot = true
+}
+```
+
+RDS 인스턴스 리소스는 `aws_db_instance`입니다. 이름은 `web_db`로 지정했습니다. 위에서 지정한 각 속성의 의미는 다음과 같습니다.
+
+- `allocated_storage` : 할당할 용량(기가바이트 단위)
+- `engine` : 데이터베이스 엔진
+- `engine_version` : 사용할 데이터베이스 엔진 버전
+- `instance_class` : 인스턴스 타입(RDS 인스턴스 타입만 사용 가능)
+- `username` : 계정 이름
+- `password` : 암호
+- `skip_final_snapshot` : 인스턴스 제거 시 최종 스냅샷을 만들지 않고 제거할 지를 결정합니다. 기본값은 false입니다. 단, 이 경우 테라폼에서 인스턴스 삭제가 어려우므로, 여기서는 true를 지정해줍니다.
+
