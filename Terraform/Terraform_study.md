@@ -494,3 +494,17 @@ Plan: 4 to add, 0 to change, 0 to destroy.
 - **저장소에서 이력 추적을 할 수도 있고, 깃허브에서 팀원들과 코드 리뷰를 진행할 수도 있습니다. 이 과정에서 누가 어떤 리소스를 왜 추가했는지, 투명성은 자동적으로 얻어집니다.**
 - 좀 더 잘 활용한다면 CI를 사용해 코드 리뷰가 된 사항을 자동적으로 플랜 및 적용하는 것도 가능합니다.
 
+## 테라폼 공식 문서
+
+- [테라폼 공식 문서](https://www.terraform.io/docs/index.html)
+- [테라폼 명령어 - plan](https://www.terraform.io/docs/cli/commands/plan.html)
+- [테라폼 명령어 - apply](https://www.terraform.io/docs/cli/commands/apply.html)
+
+## AWS 프로바이더 레퍼런스
+
+- [AWS 프로바이더: aws](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [AWS 리소스: aws_key_pair](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair)
+- [AWS 데이터 소스: aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/security_group)
+- [AWS 리소스: aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)
+- [AWS 리소스: aws_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)
+- [AWS 리소스: aws_db_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance)
