@@ -398,4 +398,3 @@ $ terraform plan
 
 Plan: 0 to add, 0 to change, 4 to destroy.
 ```
-
