@@ -451,3 +451,35 @@ Do you really want to destroy all resources?
   Enter a value: yes
 ```
 
+## 모든 리소스 다시 프로비저닝하기
+
+모든 리소스를 삭제했지만, 리소스 정의 파일은 그대로 남아있습니다. **즉, 앞서 생성했던 인프라스트럭처를 그대로 재현할 수 있습니다.** 현재 상태는 아래 그림과 같습니다.
+
+<img src="../img/terraform9.png">
+
+**<모든 리소스가 정의되어 있고, 아직 생성은 되지 않은 상태>**
+
+반드시 `plan`부터 실행해서 계획을 확인합니다.
+
+```sh
+$ terraform plan
+...
+  + resource "aws_db_instance" "web_db" {
+...
+  + resource "aws_instance" "web" {
+...
+  + resource "aws_key_pair" "web_admin" {
+...
+  + resource "aws_security_group" "ssh" {
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+```
+
+4개의 리소스가 생성될 계획입니다. 바로 `apply`해서 리소스를 생성해봅니다.
+
+<img src="../img/terraform10.png">
+
+**<정의된 모든 리소스가 한 번에 생성된 상태>**
+
+**이렇게 테라폼을 사용하면 `plan`, `apply`, `destroy`를 반복하면서 큰 부담 없이 인프라를 생성하고 삭제하면서 점진적으로 구성해나갈 수 있습니다.** 그리고 최종적으로 구성된 결과는, 마지막에 확인한 것처럼 쉽게 삭제하거나 복원할 수 있습니다. **Infrastructure as Code**의 강력한 장점 중 하나라고 할 수 있습니다.
+
