@@ -398,3 +398,56 @@ $ terraform plan
 
 Plan: 0 to add, 0 to change, 4 to destroy.
 ```
+
+`+`와 반대로 `-`는 어**떤 리소스를 삭제**한다는 의미입니다. 이상적인 상태에 리소스가 없기 때문에, 실제로 생성되어 있는 리소스들을 제거하려고 하는 것입니다.
+
+<img src="../img/terraform8.png">
+
+**<리소스 정의는 없지만, 실제로는 리소스가 생성되어 있는 상태>**
+
+이제 다시 `web_infra.tf` 파일을 복사해옵니다.
+
+```sh
+$ mv /tmp/web_infra.tf .
+```
+
+**이 상태에서 `terraform plan`을 실행하면, `No changes`가 출력 됩니다.**
+
+테라폼은 리소스 정의 파일을 프로젝트에서 제거하지 않고도 리소스가 아무것도 없는 상태에서 `plan`을 실행해볼 수 있는 옵션을 지원합니다. `plan`에 `-destroy` 옵션을 붙여서 실행해봅니다.
+
+```sh
+$ terraform plan -destroy
+...
+  - resource "aws_db_instance" "web_db" {
+...
+  - resource "aws_instance" "web" {
+...
+  - resource "aws_key_pair" "web_admin" {
+...
+  - resource "aws_security_group" "ssh" {
+
+Plan: 0 to add, 0 to change, 4 to destroy.
+```
+
+앞에서 리소스 정의 파일을 제외시키고 `plan`한 것과 같은 결과를 얻을 수 있습니다. 이 계획을 적용하려면 `terraform destroy` 명령어를 실행합니다.
+
+```sh
+$ terraform destroy
+...
+  - resource "aws_db_instance" "web_db" {
+...
+  - resource "aws_instance" "web" {
+...
+  - resource "aws_key_pair" "web_admin" {
+...
+  - resource "aws_security_group" "ssh" {
+
+Plan: 0 to add, 0 to change, 4 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+```
+
