@@ -3,7 +3,7 @@
 ### Overview
 - - -
 
-<img src="../../img/monolithic_vs_microservices.jpg">
+<img src="../img/monolithic_vs_microservices.jpg">
 
 이전 TIL에서 `MicroService Architecture`의 장단점에 대해서 알아봤습니다.
 
@@ -38,11 +38,11 @@
 
 그래서 `Service Mesh` 아키텍처를 사용하여 다양한 메커니즘을 처리하곤 합니다.
 
-<img src="../../img/service-mesh-generic-topology.png">
+<img src="../img/service-mesh-generic-topology.png">
 
 기존의 서비스 아키텍처에서의 호출이 직접 호출방식이었다면,
-<img src="../../img/last-architecture.png">
+<img src="../img/last-architecture.png">
 
 `Service Mesh`에서의 호출은 서비스에 딸린 proxy끼리 이뤄지게 됩니다.
-<img src="../../img/now-architecture.png">
+<img src="../img/now-architecture.png">
 
