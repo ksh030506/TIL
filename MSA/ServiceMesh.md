@@ -61,3 +61,8 @@
 프록시들에 설정값을 전달하고 관리하는 컨트롤러 역할을 `Control Plane`이라고 합니다.
 
 ## Service Mesh의 종류
+<img src="../img/ServiceMeshKind.png">
+
+Service mesh는 현재 크게 세가지 유형으로 구분할 수 있습니다.
+
+**1) PaaS (Platform as a Service)의 일부로 서비스 코드에 포함되는 유형**
