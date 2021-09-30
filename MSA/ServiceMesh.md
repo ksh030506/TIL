@@ -66,3 +66,14 @@
 Service mesh는 현재 크게 세가지 유형으로 구분할 수 있습니다.
 
 **1) PaaS (Platform as a Service)의 일부로 서비스 코드에 포함되는 유형**
+Microsoft Azure Service fabric, lagom, SENECA 등이 유형에 해당되며, 프레임워크 기반의 프로그래밍 모델이기 때문에 Service Mesh를 구현하는데 특화된 코드가 필요합니다. (Mesh-native Code)
+
+**2) 라이브러리로 구현되어 API 호출을 통해 Service mesh에 결합되는 유형**
+Spring Cloud, Netflix OSS(Ribbon/Hystrix/Eureka/Archaius), finagle 등이 이 유형에 해당되며, 프레임워크 라이브러리를 사용하는 형태입니다. 이중 Netfilix와 Prana는 sidecar 형태로 동작합니다. Service Mesh를 이해하고 코드를 작성해야합니다. (Mesh Aware Code)
+
+**3) Side car proxy를 이용하여 Service mesh를 마이크로서비스에 주입하는 유형**
+Istio/Envoy, Consul, Linkerd 등이 이 유형에 해당되며, sidecar proxy 형태로 동작됩니다. 따라서 Service Mesh와 무관하게 코드를 작성할 수 있습니다.
+
+### Sidecar Pattern??
+<img src="../img/sidecar.png">
+
