@@ -93,3 +93,10 @@ API Gateway에서도 Service Discovery, 라우팅, 트래픽 관리와 같은 �
 
 [API Gateway](./API-Gateway.md)
 
+그럼 API Gateway와 Service Mesh는 무엇이 다른걸까요?
+    - 적용되는 위치
+      - API Gateway는 마이크로서비스 그룹의 외부 경계에 위치하여 역할을 수행하지만, Service Mesh는 경계 내부에서 그 역할을 수행합니다.
+    - 아키텍쳐 형태
+      - API Gateway가 중앙집중형 아키텍처여서 SPOF(Single Point Failure)을 생성한다면, Service Mesh는 분산형 아키텍처를 취하기 때문에 SPOF를 생성하지 않고 확장이 용이합니다.
+    - 패턴
+      - 
