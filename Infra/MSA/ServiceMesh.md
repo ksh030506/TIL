@@ -75,6 +75,7 @@ Spring Cloud, Netflix OSS(Ribbon/Hystrix/Eureka/Archaius), finagle 등이 이 �
 Istio/Envoy, Consul, Linkerd 등이 이 유형에 해당되며, sidecar proxy 형태로 동작됩니다. 따라서 Service Mesh와 무관하게 코드를 작성할 수 있습니다.
 
 ### Sidecar Pattern??
+
 <img src="../img/sidecar.png">
 
 Sidecar pattern은 (컨테이너 배포방식의 경우) 모든 응용 프로그램 컨테이너에 추가로 **sidecar 컨테이너**가 배포됩니다. 
