@@ -109,4 +109,3 @@ if (currentUser) {
 ```
 
 **21. 파라미터에 arguments 지정 X, args 사용**
-
