@@ -160,7 +160,6 @@
 - **모든 Vault의 Request/Respones는 Audit Device에 의해 감사 로깅이 된다.**
   
 ### Client Token
-
 - **HTTP에서의 세션 ID와 같은 토큰을 반환한다.**
 - Vault의 REST API를 사용하는 경우 `HTTP 헤더에 토큰`을 적재한다.
 
