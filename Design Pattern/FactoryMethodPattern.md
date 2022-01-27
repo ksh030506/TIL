@@ -1,7 +1,7 @@
-### 디자인 패턴
+## 디자인 패턴
 - 쉬운 말로 설명하면 **소프트웨어개발 과정에서 발견된 설계의 노하우를 축적하고 이름을 붙어** 이후에 재사용성하기 좋은 형태로 **특정 규약**을 정의한 것입니다.
 
-## 왜 디자인 패턴을 사용하는데?
+### 왜 디자인 패턴을 사용하는데?
 1. 여러 사람이 협업하는 과정에서 각각의 코딩 스타일을 이해하지 못하고 수정하게 된다면,
 2. 의도치 않는 버그를 발생시키기 쉽고, 성능을 최적화 시키기 어렵다. -> 커뮤니케이션 및 예산 증가 초래
 3. XXXClass를 만들고 이렇게 엮고 저렇게 엮고 새로운 인터페이스를 만들어 한번에 처리하는 것으로 설계해보자......라는 말보다
@@ -35,95 +35,11 @@
 <img src="https://www.programcreek.com/wp-content/uploads/2013/02/factory-design-pattern.png">
 
 ## Java Factory Method Pattern 예제 소스 코드
+- GitHub Factory-Method-Pattern-Example 참고 (위 사진 사용)
 
-- Shape.java
-    ```java
-    public interface Shape{
-        void draw();
-    }
-    ```
-
-- Circle.java
-    ```java
-        public class Circle implements Shape {
-            @Override
-            public void draw(){
-                System.out.println("Circle - draw() Method");
-            }
-        }
-    ```
-
-- Circle.java
-    ```java
-        public class Circle implements Shape {
-            @Override
-            public void draw(){
-                System.out.println("Circle - draw() Method");
-            }
-        }
-    ```
-- Rectangle.java
-    ```java
-        public class Rectangle implements Shape {
-            @Override
-            public void draw(){
-                System.out.println("Rectangle - draw() Method");
-            }
-        }
-    ```
-
-- Square.java
-    ```java
-        public class Square implements Shape {
-            @Override
-            public void draw() {
-                System.out.println("Square - draw() Method");
-            }
-        }
-    ```
-
-- ShapeFactory.java
-    ```java
-        public class ShapeFactory {
-            //팩토리 매소드 - 객체 생성 후 반환
-            public Shape getShape(String shapeType){
-                if(shapeType == null){
-                    return null;
-                }
-                if(shapeType.equalsIgnoreCase("CIRCLE")){
-                    return new Circle();
-                }
-                else if(shapeType.equalsIgnoreCase("RECTANGLE")){
-                    return new Rectangle();
-                }
-                else if(shapeType.equalsIgnoreCase("SQUARE")){
-                    return new Square();
-                }
-                return null;
-            }
-        }
-    ```
-
-- FactoryPatternTest.java
-    ```java
-        public class FactoryPatternTest {
-            public static void main(String[] args){
-                //팩토리 클래스에서 객체를 생성후 반환
-                ShapeFactory shapeFactory = new ShapeFactory();
-
-                Shape shape1 = shapeFactory.getShape("CIRCLE");
-                shape1.draw();
-
-                Shape shape2 = shapeFactory.getShape("RECTANGLE");
-                shape2.draw();
-
-                Shape shape3 = shapeFactory.getShape("SQUARE");
-                shape3.draw();
-            }
-        }
-    ```
-
-## 정리
+### 정리
 - 객체 생성을 담당 및 처리하는 팩토리 클래스가 존재
 - 팩토리 클래스만 관리하면 되므로 객체 생성에 관한 확장도 쉽게 구성할 수 있다
-- 의존성 원칙 및 추상 팩토리, 정적 팩토리 ....
+- 
+### 다음번엔??
+- 정적 팩토리 메소드에 cache 적용하기
