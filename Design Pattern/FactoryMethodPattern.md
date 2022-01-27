@@ -35,7 +35,7 @@
 <img src="https://www.programcreek.com/wp-content/uploads/2013/02/factory-design-pattern.png">
 
 ## Java Factory Method Pattern 예제 소스 코드
-- GitHub Factory-Method-Pattern-Example 참고 (위 사진 사용)
+- GitHub : <a href="https://github.com/ksh030506/Factory-Method-Pattern-Example">Factory-Method-Pattern-Example 참고</a> (위 사진 사용)
 
 ### 정리
 - 객체 생성을 담당 및 처리하는 팩토리 클래스가 존재
