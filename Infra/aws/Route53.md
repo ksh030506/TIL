@@ -2,7 +2,7 @@
 
 ## PerView
 - 확장성이 뛰어난 Domain Name System (DNS) 서비스
-- **www.example.com**와 같은 사람이 읽을 수 있는 이름을 **192.0.2.1** 이와 같은 IP 주소로 변환하여 서로 통신할 수 있도록 변환합니다.
+- "www.example.com" 와 같은 사람이 읽을 수 있는 이름을 **192.0.2.1** 이와 같은 IP 주소로 변환하여 서로 통신할 수 있도록 변환합니다.
 
 ### HTTPS?
 - 기존의 HTTP는 전송하는 데이터를 암호화하지 않고 평문으로 통신을 하기 때문에 도청, 변조 등의 보안에 매우 취약한 프로토콜입니다.
@@ -22,7 +22,7 @@
 ## 요금?
 - https://aws.amazon.com/ko/route53/pricing/ 참고
 
-## www.example.com를 검색하면 어떻게 될까? (AWS DNS 동작 원리)
+## "www.example.com" 를 검색하면 어떻게 될까? (AWS DNS 동작 원리)
 <img src="./route53.png">
 
 1. 사용자가 웹 브라우저를 열어 www.example.com을 검색합니다.
