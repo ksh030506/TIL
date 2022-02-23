@@ -61,7 +61,7 @@
 **trevari.co.kr -> 퍼블릭**
 **trevari.net -> 프라이빗**
 
-- trevari.co.kr
+- trevari.co.kr 
   - NS : 네임 서버
   - 서비스 : admin, b2b2, backend, dev, partners, user, www.trevari.co.kr
 - trevari.net
