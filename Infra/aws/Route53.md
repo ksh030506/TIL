@@ -56,11 +56,16 @@
 4. AWS Elastic Beanstalk에 ACM 인증서 등록
     - **구성** 버튼을 눌러 이동 -> 로드밸런서 탭으로 이동
     - **리스너 추가** 버튼 눌러서 추가 -> 443, HTTPS, SSL 인증서
+<<<<<<< HEAD
 ## 트레바리 Route 53 분석 (Route 53은 프리티어가 아닙니다ㅠㅠ)
+=======
+
+## 트레바리 Route 53 분석
+>>>>>>> 2511fb38c7075b327902906b2075a4bdc1d8987e
 **trevari.co.kr -> 퍼블릭**
 **trevari.net -> 프라이빗**
 
-- trevari.co.kr
+- trevari.co.kr 
   - NS : 네임 서버
   - 서비스 : admin, b2b2, backend, dev, partners, user, www.trevari.co.kr
 - trevari.net
